@@ -31,6 +31,26 @@ header .search input {
   border-radius: 0;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+  padding-left: 15px;
+  font-size: 16px;
+  background: #6d6165;
+  color: #fff;
+}
+header .search input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #ccc;
+}
+header .search input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc;
+}
+header .search input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc;
+}
+header .search input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #ccc;
 }
 header .search button {
   width: 100px;

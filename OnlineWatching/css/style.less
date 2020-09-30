@@ -10,7 +10,6 @@ body {
   height: 100%;
 }
 
-
 header {
   position  : relative;
   width     : 100%;
@@ -18,26 +17,47 @@ header {
   background: #42383c;
 
   .search {
-    position: absolute;
-    width   : 430px;
-    height  : 40px;
-
-    left         : 50%;
-    top          : 50%;
-    transform    : translateX(-50%);
-    margin-top   : -19px;
-    // background: green;
-
-    display: flex;
+    position  : absolute;
+    width     : 430px;
+    height    : 40px;
+    left      : 50%;
+    top       : 50%;
+    transform : translateX(-50%);
+    margin-top: -19px;
+    display   : flex;
 
     input {
-      width: 330px;
-
+      width                    : 330px;
       border                   : none;
       outline                  : none;
       border-radius            : 0;
       border-top-left-radius   : 20px;
       border-bottom-left-radius: 20px;
+      padding-left             : 15px;
+      font-size                : 16px;
+      background               : #6d6165;
+      color                    : #fff;
+
+      // 适配placeholder颜色
+      &::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: #ccc;
+      }
+
+      &:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #ccc;
+      }
+
+      &::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #ccc;
+      }
+
+      &:-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: #ccc;
+      }
     }
 
     button {
@@ -56,7 +76,5 @@ header {
         background: #fe183e;
       }
     }
-
   }
-
 }
