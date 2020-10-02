@@ -1,0 +1,1 @@
+const M3U8_API = 'https://www.nxflv.com/?url=';

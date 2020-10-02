@@ -47,12 +47,55 @@ const recommendList = [
     }
 ];
 
-
+// 院线热映列表
+const mov_1 = [
+    {
+        name: '急先锋',
+        imgcover: '../imgs/350.jpg',
+        url: 'https://douban.donghongzuida.com/20200731/6515_1f4ce9c2/index.m3u8'
+    },
+    {
+        name: '急先锋',
+        imgcover: '../imgs/350.jpg',
+        url: 'https://douban.donghongzuida.com/20200731/6515_1f4ce9c2/index.m3u8'
+    },
+    {
+        name: '急先锋',
+        imgcover: '../imgs/350.jpg',
+        url: 'https://douban.donghongzuida.com/20200731/6515_1f4ce9c2/index.m3u8'
+    },
+    {
+        name: '急先锋',
+        imgcover: '../imgs/350.jpg',
+        url: 'https://douban.donghongzuida.com/20200731/6515_1f4ce9c2/index.m3u8'
+    },
+    {
+        name: '急先锋',
+        imgcover: '../imgs/350.jpg',
+        url: 'https://douban.donghongzuida.com/20200731/6515_1f4ce9c2/index.m3u8'
+    },
+    {
+        name: '急先锋',
+        imgcover: '../imgs/350.jpg',
+        url: 'https://douban.donghongzuida.com/20200731/6515_1f4ce9c2/index.m3u8'
+    },
+    {
+        name: '急先锋',
+        imgcover: '../imgs/350.jpg',
+        url: 'https://douban.donghongzuida.com/20200731/6515_1f4ce9c2/index.m3u8'
+    },
+    {
+        name: '急先锋',
+        imgcover: '../imgs/350.jpg',
+        url: 'https://douban.donghongzuida.com/20200731/6515_1f4ce9c2/index.m3u8'
+    }
+];
 
 // 入口函数
 $(function () {
     loadRecommends();
 
+    loadMov();
 });
 
 
@@ -78,5 +121,24 @@ function loadRecommends() {
         console.log(id);
     });
 
+
+}
+
+// 加载首页影片
+function loadMov() {
+
+    // 院线热映
+    let html = '';
+    let itemHtml = `
+    <a id="mov_1_{0}" class="movie-item" href="{1}" target="_blank">
+        <img src="{2}" alt="" class="cover">
+        <p class="name">{3}</p>
+    </a>
+    `;
+    $.each(mov_1, (index, item) => {
+        let s = itemHtml;
+        html += s.format(index, M3U8_API + item['url'], item['imgcover'], item['name']);
+    });
+    $('#mov_1').html(html);
 
 }
