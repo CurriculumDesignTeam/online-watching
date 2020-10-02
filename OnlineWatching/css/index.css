@@ -40,3 +40,33 @@
 .slider .right ul li:hover {
   color: #ff5c38;
 }
+.box {
+  position: relative;
+  width: 100%;
+}
+.box .head-title {
+  margin: 20px 3.5%;
+}
+.box .movies {
+  margin: 0 3.5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.box .movies .movie-item {
+  text-decoration: none;
+  cursor: pointer;
+  margin: 10px 13px;
+}
+.box .movies .movie-item .cover {
+  width: 185px;
+  height: 260px;
+  border-radius: 5px;
+}
+.box .movies .movie-item .name {
+  margin: 9px 0;
+  color: #000;
+  font-size: 16px;
+}
+.box .movies .movie-item .name:hover {
+  color: #fe5c38;
+}
