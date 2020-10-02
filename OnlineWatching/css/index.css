@@ -38,7 +38,7 @@
   cursor: pointer;
 }
 .slider .right ul li:hover {
-  color: #ff5c38;
+  color: #ff5c38 !important;
 }
 .box {
   position: relative;
