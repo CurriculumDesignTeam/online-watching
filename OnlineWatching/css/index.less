@@ -1,12 +1,9 @@
 // 轮播图
 .slider {
-
-    width : 100%;
-    height: 520px;
-
+    width     : 100%;
+    height    : 520px;
     background: green;
-
-    display: flex;
+    display   : flex;
 
     .left {
         width     : calc(100% - 350px);
@@ -43,7 +40,6 @@
             justify-content: space-around;
 
             li {
-
                 cursor: pointer;
 
                 &:hover {
@@ -52,44 +48,5 @@
             }
         }
 
-    }
-}
-
-
-// box
-.box {
-    position: relative;
-    width   : 100%;
-
-    .head-title {
-        margin: 20px 3.5%;
-    }
-
-    .movies {
-        margin   : 0 3.5%;
-        display  : flex;
-        flex-wrap: wrap;
-
-        .movie-item {
-            text-decoration: none;
-            cursor         : pointer;
-            margin         : 10px 13px;
-
-            .cover {
-                width        : 185px;
-                height       : 260px;
-                border-radius: 5px;
-            }
-
-            .name {
-                margin   : 9px 0;
-                color    : #000;
-                font-size: 16px;
-
-                &:hover {
-                    color: #fe5c38;
-                }
-            }
-        }
     }
 }
