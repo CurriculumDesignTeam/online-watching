@@ -53,7 +53,20 @@ function loadEvents() {
     $('#adminForm').submit(() => {
         let username = $('#adminUsername').val();
         let password = $('#adminPassword').val();
-
+        let url = ACCOUNT.LOGIN;
+        let param = {
+            account: username,
+            pwd: password,
+            type: 1
+        };
+        my_ajax(url, param, (e) => {
+            if (e.code === 200) {
+                window.location.href = 'admin.html';
+            }
+            else {
+                toastr.error(e.message);
+            }
+        });
 
         return false;
     });
