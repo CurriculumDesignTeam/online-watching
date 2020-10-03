@@ -101,33 +101,7 @@ $(function () {
     loadRecommends();
 
     loadMov();
-
-    loadOther();
 });
-
-
-// 添加事件
-function loadOther() {
-    console.log('添加事件');
-
-    let searchBtn = $('#searchBtn');
-
-    searchBtn.click(() => {
-        // console.log('sss');
-        // 获取输入
-        let text = $('#searchInput').val().trim();
-
-        // 跳转到搜索页面
-        let url = 'search.html' + '?keyword=' + text;
-
-        console.log(url);
-
-        window.location.href = url;
-
-    });
-
-}
-
 
 // 加载推荐影片
 function loadRecommends() {
