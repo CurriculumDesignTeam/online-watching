@@ -98,6 +98,8 @@ let slider_num = recommendList.length;
 
 // 入口函数
 $(function () {
+    toastr.success('登录成功');
+
     loadRecommends();
 
     loadMov();
@@ -182,8 +184,6 @@ function loadMov() {
     };
 
     my_ajax(url, param, (e) => {
-        console.log(e);
-        // 成功
         if (e.code === 200) {
             let list = e.data;
             renderVideoList('mov_1', list);

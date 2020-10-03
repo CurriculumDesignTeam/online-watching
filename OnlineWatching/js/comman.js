@@ -18,8 +18,6 @@ function loadOther() {
         // 跳转到搜索页面
         let url = 'search.html' + '?keyword=' + text;
 
-        console.log(url);
-
         window.location.href = url;
 
         return false;

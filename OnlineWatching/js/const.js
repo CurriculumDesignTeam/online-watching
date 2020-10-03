@@ -1,5 +1,11 @@
 const M3U8_API = 'https://www.nxflv.com/?url=';
 
+
+const ACCOUNT = {
+    ADD: 'https://fengyezhan.xyz/kcsj/account/add',
+    LOGIN: 'https://fengyezhan.xyz/kcsj/account/login'
+};
+
 const MOVIE = {
     SEARCH: 'https://fengyezhan.xyz/kcsj/movie/search',
 
