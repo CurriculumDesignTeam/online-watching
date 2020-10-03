@@ -81,8 +81,8 @@ function renderList(movies) {
     let html = '';
     let itemHtml = `
     <a id="mov_1_{0}" class="movie-item" href="{1}" target="_blank">
-        <img src="{2}" alt="" class="cover">
-        <p class="name">{3}</p>
+        <img src="{2}" alt="" class="cover" title="{3}">
+        <p class="name" title="{3}">{3}</p>
     </a>
     `;
     $.each(movies, (index, item) => {

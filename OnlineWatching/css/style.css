@@ -91,9 +91,13 @@ header .search button:hover {
   border-radius: 5px;
 }
 .box .movies .movie-item .name {
+  max-width: 185px;
   margin: 9px 0;
   color: #000;
   font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .box .movies .movie-item .name:hover {
   color: #fe5c38;

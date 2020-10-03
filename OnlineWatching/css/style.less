@@ -108,9 +108,13 @@ header {
       }
 
       .name {
-        margin   : 9px 0;
-        color    : #000;
-        font-size: 16px;
+        max-width    : 185px;
+        margin       : 9px 0;
+        color        : #000;
+        font-size    : 16px;
+        white-space  : nowrap;
+        overflow     : hidden;
+        text-overflow: ellipsis;
 
         &:hover {
           color: #fe5c38;

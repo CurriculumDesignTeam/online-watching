@@ -55,7 +55,7 @@ const mov_1 = [
         url: 'https://douban.donghongzuida.com/20200731/6515_1f4ce9c2/index.m3u8'
     },
     {
-        name: '急先锋',
+        name: '急先锋急先锋急先锋急先锋急先锋',
         imgcover: '../imgs/350.jpg',
         url: 'https://douban.donghongzuida.com/20200731/6515_1f4ce9c2/index.m3u8'
     },
@@ -180,8 +180,8 @@ function loadMov() {
     let html = '';
     let itemHtml = `
     <a id="mov_1_{0}" class="movie-item" href="{1}" target="_blank">
-        <img src="{2}" alt="" class="cover">
-        <p class="name">{3}</p>
+        <img src="{2}" alt="" class="cover" title="{3}">
+        <p class="name" title="{3}">{3}</p>
     </a>
     `;
     $.each(mov_1, (index, item) => {
