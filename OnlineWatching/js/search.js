@@ -67,27 +67,7 @@ function search(keyword) {
     my_ajax(MOVIE.SEARCH, param, (e) => {
         toastr.success(e.message);
         console.log(e.data);
-        
-        renderList(e.data);
-
+        renderVideoList('movies', e.data);
     });
 }
 
-
-// 渲染查询结果
-function renderList(movies) {
-    console.log('渲染界面');
-    // 院线热映
-    let html = '';
-    let itemHtml = `
-    <a id="mov_1_{0}" class="movie-item" href="{1}" target="_blank">
-        <img src="{2}" alt="" class="cover" title="{3}">
-        <p class="name" title="{3}">{3}</p>
-    </a>
-    `;
-    $.each(movies, (index, item) => {
-        let s = itemHtml;
-        html += s.format(index, M3U8_API + item['url'], item['avatar'], item['moviename']);
-    });
-    $('#mov_1').html(html);
-}

@@ -26,3 +26,25 @@ function loadOther() {
     });
 
 }
+
+
+// 根据视频列表渲染视频
+function renderVideoList(divId, list) {
+    let div = $('#' + divId);
+    let html = '';
+    let itemHtml = `
+    <a id="mov_1_{0}" class="movie-item" href="{1}" target="_blank">
+        <img src="{2}" alt="" class="cover" title="{3}">
+        <p class="name" title="{3}">{3}</p>
+    </a>
+    `;
+
+    $.each(list, (index, item) => {
+        let s = itemHtml;
+        let href = 'play.html?id=' + item['movieid'];
+        html += s.format(index, href, item['avatar'], item['moviename']);
+    });
+
+    div.html(html);
+
+}

@@ -181,33 +181,16 @@ function loadMov() {
         num: 16
     };
 
-    let html = '';
-    let itemHtml = `
-    <a id="mov_1_{0}" class="movie-item" href="{1}" target="_blank">
-        <img src="{2}" alt="" class="cover" title="{3}">
-        <p class="name" title="{3}">{3}</p>
-    </a>
-    `;
-
     my_ajax(url, param, (e) => {
         console.log(e);
         // 成功
         if (e.code === 200) {
             let list = e.data;
-
-            $.each(list, (index, item) => {
-                let s = itemHtml;
-                html += s.format(index, M3U8_API + item['url'], item['avatar'], item['moviename']);
-            });
-            $('#mov_1').html(html);
-
+            renderVideoList('mov_1', list);
         } else {
             toastr.error(e.message);
         }
     });
-
-    // 院线热映
-
 
 
 }
