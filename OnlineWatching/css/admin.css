@@ -1,0 +1,45 @@
+.head {
+  margin: 30px 0 0 60px;
+  padding: 0;
+}
+.table-div {
+  padding: 10px 60px 0 60px;
+}
+.table-div table {
+  margin-bottom: 0;
+  table-layout: fixed;
+}
+.table-div table tr {
+  height: 38px;
+}
+.table-div table tr:hover {
+  background: #e0f5f1;
+  outline: solid 1px #a9d4c7;
+}
+.table-div table tr .options {
+  position: relative;
+}
+.table-div table tr .options span {
+  position: absolute;
+  cursor: pointer;
+}
+.table-div table tr .options .delete {
+  color: red;
+}
+.table-div table tr td {
+  line-height: 30px;
+}
+.table-div table tr td input[type=checkbox] {
+  margin-right: 3px;
+}
+.table-div table .add-user-tr td input {
+  width: 80%;
+  outline: none;
+  border: none;
+  padding-left: 5px;
+}
+.table-div table .course-name {
+  outline: none;
+  border: none;
+  padding-left: 5px;
+}
