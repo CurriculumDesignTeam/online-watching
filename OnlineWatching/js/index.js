@@ -176,7 +176,11 @@ function loadRecommends() {
 // 加载首页影片
 function loadMov() {
 
-    // 院线热映
+    let url = MOVIE.RANDOM;
+    let param = {
+        num: 16
+    };
+
     let html = '';
     let itemHtml = `
     <a id="mov_1_{0}" class="movie-item" href="{1}" target="_blank">
@@ -184,10 +188,27 @@ function loadMov() {
         <p class="name" title="{3}">{3}</p>
     </a>
     `;
-    $.each(mov_1, (index, item) => {
-        let s = itemHtml;
-        html += s.format(index, M3U8_API + item['url'], item['imgcover'], item['name']);
+
+    my_ajax(url, param, (e) => {
+        console.log(e);
+        // 成功
+        if (e.code === 200) {
+            let list = e.data;
+
+            $.each(list, (index, item) => {
+                let s = itemHtml;
+                html += s.format(index, M3U8_API + item['url'], item['avatar'], item['moviename']);
+            });
+            $('#mov_1').html(html);
+
+        } else {
+            toastr.error(e.message);
+        }
     });
-    $('#mov_1').html(html);
+
+    // 院线热映
+
+
 
 }
+
