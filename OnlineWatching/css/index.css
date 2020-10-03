@@ -11,6 +11,7 @@
 }
 .slider .left img {
   height: 100%;
+  cursor: pointer;
 }
 .slider .right {
   width: 350px;

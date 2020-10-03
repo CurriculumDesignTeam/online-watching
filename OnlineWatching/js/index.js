@@ -3,47 +3,47 @@ const recommendList = [
         no: 0,
         name: '猎龙队',
         imgurl: '../imgs/banner/猎龙队.jpg',
-        url: ''
+        url: 'https://douban.donghongzuida.com/20200911/9334_2824bce7/index.m3u8'
     }, {
         no: 1,
         name: '地宫笔记之五百龙首',
         imgurl: '../imgs/banner/地宫笔记之五百龙首.jpg',
-        url: ''
+        url: 'https://douban.donghongzuida.com/20200915/9681_6cf2fbd3/index.m3u8'
     }, {
         no: 2,
         name: '时间牢笼',
         imgurl: '../imgs/banner/时间牢笼.jpg',
-        url: ''
+        url: 'https://yuledy.helanzuida.com/20200919/11222_05d38789/index.m3u8'
     }, {
         no: 3,
         name: '燕赤霞之五尾天蝎',
         imgurl: '../imgs/banner/燕赤霞之五尾天蝎.jpg',
-        url: ''
+        url: 'https://douban.donghongzuida.com/20200922/10079_e602b1dc/index.m3u8'
     }, {
         no: 4,
         name: '怪兽2',
         imgurl: '../imgs/banner/怪兽2.jpg',
-        url: ''
+        url: 'https://douban.donghongzuida.com/20200925/10148_d16c71cb/index.m3u8'
     }, {
         no: 5,
         name: '怪物先生',
         imgurl: '../imgs/banner/怪物先生.jpg',
-        url: ''
+        url: 'https://douban.donghongzuida.com/20200818/7672_35e409ad/index.m3u8'
     }, {
         no: 6,
         name: '劫后重生之宝藏之谜',
         imgurl: '../imgs/banner/劫后重生之宝藏之谜.jpg',
-        url: ''
+        url: 'https://xigua-cdn.haima-zuida.com/20200928/15017_ff0ef2db/index.m3u8'
     }, {
         no: 7,
         name: '我的女友是机器人',
         imgurl: '../imgs/banner/我的女友是机器人.jpg',
-        url: ''
+        url: 'https://douban.donghongzuida.com/20200919/9956_9c08c790/index.m3u8'
     }, {
         no: 8,
         name: '荞麦疯长',
         imgurl: '../imgs/banner/荞麦疯长.jpg',
-        url: ''
+        url: 'https://douban.donghongzuida.com/20200925/10155_bf78cc83/index.m3u8'
     }
 ];
 
@@ -172,14 +172,29 @@ function loadRecommends() {
         }
     }, 2000);
 
-    // 添加鼠标移入事件
+    // 点击海报事件
+    $('#recommendImg').click(() => {
+        let url = M3U8_API + recommendList[curr_slider_index]['url'];
+        window.open(url);
+    });
+
+    // 右侧影片添加点击事件
     let recommend = $('.recommend-item');
+    recommend.click((e) => {
+        let no = e.target.attributes.recno.value - 0;
+        let url = M3U8_API + recommendList[no]['url'];
+        window.open(url);
+    });
+
+    // 添加鼠标移入事件
     recommend.mouseenter((e) => {
         let no = e.target.attributes.recno.value - 0;
         curr_slider_index = no;
         let curr = $('#recommendImg');
         curr.attr('src', recommendList[no].imgurl);
     });
+
+
 
 
 }
