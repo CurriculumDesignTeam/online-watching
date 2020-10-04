@@ -1,10 +1,14 @@
 // 入口函数
 $(function () {
-    loadMovies();
+
+    loadEvents();
+
+    requestMovies();
 });
 
 
-function loadMovies() {
+// 请求影片
+function requestMovies() {
 
     let url = MOVIE.SEARCH;
     let param = {
@@ -23,7 +27,7 @@ function loadMovies() {
 
 }
 
-
+// 渲染电影列表
 function renderMovies(list) {
     console.log(list);
 
@@ -59,4 +63,14 @@ function renderMovies(list) {
     });
 
     $('#tbody').html(html);
+}
+
+// 事件
+function loadEvents() {
+
+    // 点击添加影片
+    $('#add').click(() => {
+        console.log('添加');
+        window.open("addmovie.html", "_blank");
+    });
 }

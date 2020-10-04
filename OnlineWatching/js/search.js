@@ -59,15 +59,24 @@ function search(keyword) {
     keyword = decodeURIComponent(keyword);
     console.log('搜索:' + keyword);
 
+    let url = MOVIE.SEARCH;
     let param = {
         searchword: keyword
     };
 
     // 请求
-    my_ajax(MOVIE.SEARCH, param, (e) => {
-        toastr.success(e.message);
-        console.log(e.data);
-        renderVideoList('movies', e.data);
+    my_ajax(url, param, (e) => {
+        console.log(e);
+        if (e.code === 200) {
+            toastr.success(e.message);
+            console.log(e.data);
+            renderVideoList('movies', e.data);
+        }
+        else {
+            // toastr.error(e.message);
+            toastr.info('查询结果为空');
+        }
+
     });
 }
 
